@@ -70,13 +70,8 @@ ds <- bind_rows( trainData, testData )
 # Values will be the mean and std for that key combo
 gb <- ds %>%
     # Put each measurement in it's own row
-    # The gather_ function allows us to use a regex to pass a vector of column names
-    gather(measurement, val, tBodyAcc.mean...X:fBodyBodyGyroJerkMag.std..)  %>%
-    #gather_("measurement", "meanVal", names(select(ds,contains("mean")))) %>%
-    #gather_("stdMeasurement", "stdVal", names(select(ds,contains("std")))) %>%
-    
-    # Remove the stdMeasurement column, and remove the "mean" from the measurement values
-    #select( -stdMeasurement ) %>%
+    #gather(measurement, val, tBodyAcc.mean...X:fBodyBodyGyroJerkMag.std..)  %>%
+    gather(measurement, val, -subjectId:activity)  %>%
     
     # Take average for each subject,activty,measurement
     group_by( subjectId, activity, measurement ) %>%

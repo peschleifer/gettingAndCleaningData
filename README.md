@@ -30,3 +30,17 @@ The R script (run_analysis) will do the following:
   1. Select only the columns we are interested in. In addition to the two we added in the above step, these are all the columns containing mean or standard deviation data. These are detected by the presence of the strings "mean" or "std" in the feature (column) name.
   
 1. Combine the rows from the resulting trainging and testing tables into a new data frame. There is no need to distinguish rows from the training and testing sets, so we do not add a column to indicate the origin of the data.
+1. Take following steps to create a tidy data set with the average of each variable for each activity and subject:
+
+  1. Gather all the measurements so there is one measurement per row and the measurement name is a variable
+  1. Group by the subject, activity and measurement type and add a column with the average for each grouping.
+  1. Add a measurementType variable. Set this to "mean" or "std", depending on the presence of one of these strings in the measurement name.
+  1. Remove the ".mean.." and ".std.." strings from the measurement names. At this point the mean and std measurements of the same quantity will have the same name
+  1. Spread the measurement value into two columns, according to the measurement type
+  
+1. Write the resulting data frame to a text file (activity_analysis.txt) in the data directory
+
+### Reading the results
+From the working directory, use ```r
+read.table("./UCI HAR Dataset/activity_analysis.txt",header=TRUE)
+```
