@@ -41,6 +41,4 @@ The R script (run_analysis) will do the following:
 1. Write the resulting data frame to a text file (activity_analysis.txt) in the data directory
 
 ### Reading the results
-From the working directory, use ```r
-read.table("./UCI HAR Dataset/activity_analysis.txt",header=TRUE)
-```
+From the working directory, use `read.table("./UCI HAR Dataset/activity_analysis.txt",header=TRUE)`
