@@ -1,12 +1,12 @@
 ---
 title: "codebook"
-author: "Peter Schleifer"
+author: "peschleifer"
 date: "Thursday, May 21, 2015"
 output: html_document
 ---
 
-## Accelerometer Analaysis Data
-The file is formatted to be read with read.table with header=TRUE
+## Accelerometer Analaysis Summary Data
+The file is formatted to be read with read.table with header=TRUE. Refer to the README file for details on how the data is generated and how to read the data file into R.
 
 #### subjectId
 Specifies the subject for this measurement. An integer. No further information about the sublect is available
