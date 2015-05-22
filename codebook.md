@@ -1,12 +1,7 @@
----
-title: "codebook"
-author: "peschleifer"
-date: "Thursday, May 21, 2015"
-output: html_document
----
-
 ## Accelerometer Analaysis Summary Data
 The file is formatted to be read with read.table with header=TRUE. Refer to the README file for details on how the data is generated and how to read the data file into R.
+
+The values in this data set are transformed from selected variables in the accelometer and gyroscope signals from Samsung Galaxy 5 smartphones. Measurement names prefixed with indicate raw measures in the time domain. Frequency domain measures generated via a Fast Fourier Transform are prefixed with f. Full descriptions of the original measurements are contained in the original codebook from UC Irving which is in the features\_info.txt file found in the data directory after the run\_analysis script has been run at least once.
 
 #### subjectId
 Specifies the subject for this measurement. An integer. No further information about the sublect is available
@@ -80,4 +75,4 @@ tGravityAccMag
 The average of the means recorded for this measurement. The raw data is normalized and bounded within [-1,1].
 
 #### std
-The avarage of the standard deviations recorded for this measurement. The raw data is normalized and bounded within [-1,1].
+The avarage of the standard deviations recorded for this measurement. The raw data is normalized and bounded within [-1,1]. This value is not available for all measurements.
